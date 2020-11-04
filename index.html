@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#line1{
+ color:red;
+ height:5px; 
+ 
+}
+
+body{
+  background-color:gold;
+  text-align:center;
+}
+
+ul {
+margin-left:50px;
+  font-size:50px;
+  text-shadow:2px 2px blue;
+  color:rgba(10,100,0,0.75)
+}
+
+#readeasier{
+  background-color:rgba(255,0,0,0.5);
+  position:absolute;
+  height:100vh;
+  width:40vw
+}
+#text{
+  font-size:50px;
+  position:absolute;
+  padding:20px;
+  padding-left:50px;
+  max-width:35vw;
+}
+
+#package{
+  position:absolute;
+  width:33%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-height:70vh;
+}
+
+.mySlides{
+  display:none;
+  height:100%;
+  width:100%;
+}
+#wrapper{
+  text-align:left;
+  width:100vw;
+  height:100vh;
+}
+p{
+  font-size:30px;
+  padding:50px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+  <div id = "readeasier"></div>
+  <h1 id="text"><b>Eat Anywhere</b></h1>
+ <img id="package"src="https://docs.google.com/drawings/d/e/2PACX-1vRwQaKicC6OUd9igyJhT_qddLWX6Gt7n_b2P8x6f0kLACrvS_DCCJat0oTzvAwmJLCNXo82KfQLOudM/pub?w=505&h=646">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<img class="mySlides" src="https://www.roadaffair.com/wp-content/uploads/2017/12/taj-mahal-india-shutterstock_180918317-1024x683.jpg">
+<img class="mySlides" src="https://ak.jogurucdn.com/media/image/c1/place-2015-01-23-11-3e3d973eda10b9d045083abba0ab96af.jpg">
+<img class="mySlides" src="https://www.planetware.com/photos-large/EGY/egypt-cairo-pyramids-of-giza.jpg">
+<img class="mySlides" src="https://www.avis.co.in/blog/wp-content/uploads/2018/08/paris-600x375.jpg">
+</div>
+<p><b>The US Snack Market has a crisis</b>, Most snacks are either <b>fatty</b> or <b>tasteless</b>. Neither is good. Well, <b>POPPD</b> Makhana offers a playful solution to this age old dilemma. We take an age old superfood that has been known to some societies for thousands of years and make it <b>international</b> and <b>contemporary</b> by adding fun flavors and all natural ingredients. We here are not a health food, we are a snack that promotes <b>guilt free goodness</b> and <b>scrumptious snacking!</b></p>
+<hr id="line1">
+<div id="listcont"><ul>
+ <b><li>Gluten Free</li>
+  <li>Vegan</li>
+    <li>Contains No Common Allergens</li>
+  </b>
+    
+  </ul>
+  </div>
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
