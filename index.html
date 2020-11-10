@@ -3,14 +3,26 @@
 <head>
  <title>POPPD Makhana | Snack Free Forever</title>
 <style>
+#calcount{
+  background-color:red;
+  padding:50px;
+}
+
+.tabimg{
+  width:25%;
+  
+}
+
+#slider{
+  width:97%;
+}
+
 #line1{
  color:red;
  height:5px; 
  
 }
 
-
- 
 body{
   background-color:gold;
   text-align:center;
@@ -18,7 +30,7 @@ body{
 
 ul {
 margin-left:50px;
-  font-size:50px;
+  font-size:30px;
   text-shadow:2px 2px blue;
   color:rgba(10,100,0,0.75)
 }
@@ -64,7 +76,6 @@ p{
 </head>
 
 <body>
-
 <div id="wrapper">
   <div id = "readeasier"></div>
   <h1 id="text"><b>Eat Anywhere</b></h1>
@@ -76,16 +87,56 @@ p{
 <img class="mySlides" src="https://www.avis.co.in/blog/wp-content/uploads/2018/08/paris-600x375.jpg">
 </div>
 <p><b>The US Snack Market has a crisis</b>, Most snacks are either <b>fatty</b> or <b>tasteless</b>. Neither is good. Well, <b>POPPD</b> Makhana offers a playful solution to this age old dilemma. We take an age old superfood that has been known to some societies for thousands of years and make it <b>international</b> and <b>contemporary</b> by adding fun flavors and all natural ingredients. We here are not a health food, we are a snack that promotes <b>guilt free goodness</b> and <b>scrumptious snacking!</b></p>
-<hr id="line1">
-<div id="listcont"><ul>
+<div id = "calcount">
+    <h1>Calorie Counter!</h1>
+<table>
+  <tr>
+    <td> <img  class= "tabimg" src="https://docs.google.com/drawings/d/e/2PACX-1vRwQaKicC6OUd9igyJhT_qddLWX6Gt7n_b2P8x6f0kLACrvS_DCCJat0oTzvAwmJLCNXo82KfQLOudM/pub?w=505&h=646"></td>
+    <td>POPPD Classic Makhana |  </td>
+    <td id="makhcal"></td>
+  </tr>
+  <tr>
+    <td><img class="tabimg" src="http://clipart-library.com/images/BigKxX5jT.png"></td>
+    <td>Mainstream Popcorn Brands |  </td>
+    <td id="popcal"></td>
+
+  </tr>
+</table>
+
+<div class="rangeslider"> 
+  <input type="range" min="1" max="100" value="10"
+ id="slider">
+</div> 
+</div>
+<div id="listcont">
+  <b><h1>Still a Skeptic? It gets Even Better:</h1></b>
+  <ul>
  <b><li>Gluten Free</li>
   <li>Vegan</li>
+   <li>Packed with Proteins and Beneficial Carbohydrates</li>
+   <li>Kosher</li>
     <li>Contains No Common Allergens</li>
+   <li>And the list continues!</li>
   </b>
     
   </ul>
   </div>
 <script>
+var slider = document.getElementById("slider");
+var POPPDcal=document.getElementById("makhcal")
+var popcal = document.getElementById("popcal")
+
+POPPDcal.innerHTML= Math.round(slider.value*3.6)+" calories ("+slider.value+" grams)"
+
+popcal.innerHTML= Math.round(slider.value*150/28)+" calories ("+slider.value+" grams)"
+
+slider.oninput = function() {
+  POPPDcal.innerHTML = Math.round(this.value*3.6)+" calories ("+slider.value+" grams)";
+  
+popcal.innerHTML= Math.round(slider.value*150/28)+" calories ("+this.value+" grams)"
+}
+
+/*begin slides*/
 var slideIndex = 0;
 carousel();
 
@@ -99,6 +150,7 @@ function carousel() {
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
   setTimeout(carousel, 2000); // Change image every 2 seconds
+
 }
 </script>
 </body>
